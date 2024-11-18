@@ -2,8 +2,11 @@ import React from 'react';
 import { View, Text, TextInput, TouchableOpacity } from 'react-native';
 import { styles } from './styles';
 import * as Animatable from 'react-native-animatable';
+import { useNavigation } from '@react-navigation/native';
 
 export function SignIn() {
+  const navigation = useNavigation();
+  
   return (
     <View style={styles.container}>
       <Animatable.View animation="fadeInLeft" delay={300} style={styles.containerHeader}>
@@ -22,7 +25,12 @@ export function SignIn() {
         style={styles.input}
         secureTextEntry={true}
       />
-      <TouchableOpacity style={styles.button}>
+      <TouchableOpacity 
+      style={styles.button}
+      onPress={() => {
+        navigation.navigate('DiscipliniesList')
+      }}
+      >
         <Text style={styles.buttonText}>Acessar</Text>
       </TouchableOpacity>
       <TouchableOpacity style={styles.buttonNewAccount}>
