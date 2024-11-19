@@ -3,15 +3,11 @@ import { StyleSheet } from 'react-native';
 export const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#333333',
-    padding: 32,
+    alignItems: 'center',
     justifyContent: 'center',
   },
-  title: {
-    fontSize: 24,
-    fontWeight: "bold",
-    color: "#e5bf3c",
-    marginBottom: 16,
+  content: {
+    width: '80%',
   },
   button: {
     backgroundColor: '#e5bf3c',
@@ -20,13 +16,19 @@ export const styles = StyleSheet.create({
     padding: 8,
     marginTop: 16,
     justifyContent: 'center',
-    alignItems: 'center',
+    alignItems: 'center'
   },
   buttonText: {
     fontSize: 18,
     fontWeight: 'bold'
   },
-  scrollView: {
-    height: '100%'
-  }
+  title: {
+    fontSize: 20,
+    marginTop: 28,
+  },
+  input: {
+    borderWidth: 1,
+    padding: 16,
+    marginTop: 16
+  },
 });

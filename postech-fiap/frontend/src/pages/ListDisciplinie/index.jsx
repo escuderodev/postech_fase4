@@ -1,18 +1,29 @@
 import React from 'react';
-import { SafeAreaView, ScrollView, Text } from 'react-native';
+import { SafeAreaView, ScrollView, Text, View, TouchableOpacity } from 'react-native';
 import { discipliniesList } from '../../data/disciplinies.js';
 import { DisciplinieItem } from '../../components/DisciplinieItem/DisciplinieItem.jsx';
+import { useNavigation } from '@react-navigation/native';
 import { styles } from './styles.js';
 
 export function DiscipliniesList() {
+  const navigation = useNavigation();
+
   return (
-    <SafeAreaView style={styles.container}>
+    <View style={styles.container}>
       <Text style={styles.title}>Disciplinas Cadastradas:</Text>
-      <ScrollView>
+      <TouchableOpacity
+        style={styles.button}
+        onPress={() => {
+          navigation.navigate('DisciplineForm')
+        }}
+      >
+        <Text style={styles.buttonText}>Nova Disciplina</Text>
+      </TouchableOpacity>
+      <ScrollView style={styles.scrollView}>
         {discipliniesList.map((item) => (
           <DisciplinieItem key={item._id} {...item} />
         ))}
       </ScrollView>
-    </SafeAreaView>
+    </View>
   );
 }
