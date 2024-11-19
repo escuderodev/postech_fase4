@@ -4,7 +4,7 @@ export const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: '#333333'
   },
   content: {
     width: '80%',
@@ -23,12 +23,17 @@ export const styles = StyleSheet.create({
     fontWeight: 'bold'
   },
   title: {
-    fontSize: 20,
+    fontSize: 24,
+    fontWeight: 'bold',
     marginTop: 28,
+    color: '#e5bf3c'
   },
   input: {
     borderWidth: 1,
     padding: 16,
-    marginTop: 16
+    marginTop: 16,
+    backgroundColor: '#fff',
+    fontSize: 16,
+    borderRadius: 8
   },
 });

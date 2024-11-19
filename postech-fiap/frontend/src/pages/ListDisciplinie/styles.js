@@ -4,18 +4,27 @@ export const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#333333',
-    padding: 32,
+    paddingTop: 20,
+    paddingLeft: 20,
+    paddingRight: 20,
     justifyContent: 'center',
+    alignItems: 'center',
+  },
+  scrollViewContainer: {
+    backgroundColor: '#333333',
+    paddingLeft: 10,
+    paddingRight: 24
   },
   title: {
     fontSize: 24,
     fontWeight: "bold",
     color: "#e5bf3c",
     marginBottom: 16,
+    width: '80%'
   },
   button: {
     backgroundColor: '#e5bf3c',
-    width: '100%',
+    width: '80%',
     borderRadius: 5,
     padding: 8,
     marginTop: 16,
@@ -27,6 +36,6 @@ export const styles = StyleSheet.create({
     fontWeight: 'bold'
   },
   scrollView: {
-    height: '100%'
-  }
+    height: '80%',
+  },
 });
