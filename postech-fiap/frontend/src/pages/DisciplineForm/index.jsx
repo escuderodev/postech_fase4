@@ -17,7 +17,7 @@ export function DisciplineForm() {
                 <TouchableOpacity
                     style={styles.button}
                     onPress={() => {
-                        navigation.navigate('SingUp')
+                        navigation.navigate('DiscipliniesList')
                     }}
                 >
                     <Text style={styles.buttonText}>Salvar</Text>

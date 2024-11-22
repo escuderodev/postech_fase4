@@ -33,7 +33,12 @@ export function LogIn() {
       >
         <Text style={styles.buttonText}>Acessar</Text>
       </TouchableOpacity>
-      <TouchableOpacity style={styles.buttonNewAccount}>
+      <TouchableOpacity 
+      style={styles.buttonNewAccount}
+      onPress={() => {
+        navigation.navigate('SingUp')
+      }}
+      >
         <Text style={styles.buttonRegisterText}>Não possui uma conta? Registre-se!</Text>
       </TouchableOpacity>
       </Animatable.View>

@@ -21,15 +21,17 @@ export function SingUp() {
                 <TextInput
                     style={styles.input}
                     placeholder='Digite sua senha'
+                    secureTextEntry={true}
                 />
                 <TextInput
                     style={styles.input}
-                    placeholder='Confime sua senha'
+                    placeholder='Confirme sua senha'
+                    secureTextEntry={true}
                 />
                 <TouchableOpacity
                     style={styles.button}
                     onPress={() => {
-                        navigation.navigate('DisciplineForm')
+                        navigation.navigate('LogIn')
                     }}
                 >
                     <Text style={styles.buttonText}>Salvar</Text>
