@@ -4,7 +4,7 @@ import { styles } from './styles';
 import * as Animatable from 'react-native-animatable';
 import { useNavigation } from '@react-navigation/native';
 
-export function SignIn() {
+export function LogIn() {
   const navigation = useNavigation();
   
   return (
