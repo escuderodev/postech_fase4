@@ -28,7 +28,7 @@ export function LogIn() {
       <TouchableOpacity 
       style={styles.button}
       onPress={() => {
-        navigation.navigate('DiscipliniesList')
+        navigation.navigate('ListPostAdm')
       }}
       >
         <Text style={styles.buttonText}>Acessar</Text>

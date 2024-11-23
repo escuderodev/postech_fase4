@@ -7,6 +7,8 @@ import { ListAluno } from '../pages/ListAluno'
 import { ListProfessor } from '../pages/ListProfessor'
 import { ListUser } from '../pages/ListUser'
 import { SingUp } from '../pages/SingUp'
+import { PostForm } from '../pages/PostForm'
+import { ListPostAdm } from '../pages/ListPostAdm'
 
 
 const Stack = createNativeStackNavigator()
@@ -59,6 +61,16 @@ export default function Routes() {
             <Stack.Screen
                 name="SingUp"
                 component={SingUp}
+                options={{ headerShown: false }}
+            />
+            <Stack.Screen
+                name="PostForm"
+                component={PostForm}
+                options={{ headerShown: false }}
+            />
+            <Stack.Screen
+                name="ListPostAdm"
+                component={ListPostAdm}
                 options={{ headerShown: false }}
             />
         </Stack.Navigator>
