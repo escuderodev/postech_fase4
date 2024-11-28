@@ -155,7 +155,7 @@ export class UserService {
         }
     };
 
-    getUserIdFromToken(authorization) {
+    static async getUserIdFromToken(authorization) {
 
         const secret = process.env.SECRET;
 
