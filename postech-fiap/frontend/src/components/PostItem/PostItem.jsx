@@ -1,24 +1,27 @@
-import React from 'react';
-import { View, Text, TouchableOpacity } from 'react-native';
-import { useNavigation } from '@react-navigation/native';
-import { styles } from './styles.js';
+import React from "react";
+import { View, Text, TouchableOpacity } from "react-native";
+import { useNavigation } from "@react-navigation/native";
+import { styles } from "./styles.js";
 
-export function PostItem({ _id, title, disciplina, author, content, comments }) {
+export function PostItem({ post, onPress }) {
     const navigation = useNavigation();
 
-    
     return (
         <View style={styles.container}>
             <View style={styles.content}>
-                <Text style={styles.title}>Titulo: {title}</Text>
-                <Text style={styles.title}>Disciplina: {disciplina}</Text>
-                <Text style={styles.title}>Autor: {author}</Text>
+                <TouchableOpacity onPress={onPress}>
+                    <Text style={styles.title}>Titulo: {post.title}</Text>
+                    <Text style={styles.title}>
+                        Disciplina: {post.disciplina}
+                    </Text>
+                    <Text style={styles.title}>Autor: {post.author}</Text>
+                </TouchableOpacity>
 
                 <View style={styles.actionButtons}>
                     <TouchableOpacity
                         style={styles.button}
                         onPress={() => {
-                            navigation.navigate('DisciplineForm')
+                            navigation.navigate("DisciplineForm");
                         }}
                     >
                         <Text style={styles.buttonText}>Editar</Text>
@@ -26,7 +29,7 @@ export function PostItem({ _id, title, disciplina, author, content, comments }) 
                     <TouchableOpacity
                         style={styles.button}
                         onPress={() => {
-                            navigation.navigate('DisciplineForm')
+                            navigation.navigate("DisciplineForm");
                         }}
                     >
                         <Text style={styles.buttonText}>Excluir</Text>
