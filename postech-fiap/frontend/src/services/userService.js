@@ -1,6 +1,4 @@
-import { Alert } from "react-native";
-
-const URL_BASE = "http://192.168.0.139:3000"; //colocar IP do servidor backend; (não pode ser localhost e nem 127.0.0.1)
+import { URL_BASE, PORT } from "./fetchConfig";
 
 export const createUser = async ({
     name,
@@ -8,8 +6,10 @@ export const createUser = async ({
     password,
     confirmPassword,
 }) => {
+    console.log("URL_BASE", URL_BASE);
+    console.log("PORT", PORT);
     try {
-        const response = await fetch(URL_BASE + "/users", {
+        const response = await fetch(`${URL_BASE}:${PORT}/users`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -39,9 +39,13 @@ export const listUsers = async () => {
         method: "GET",
         redirect: "follow",
     };
-
+    console.log("URL_BASE", URL_BASE);
+    console.log("PORT", PORT);
     try {
-        const response = await fetch(URL_BASE + "/users", requestOptions);
+        const response = await fetch(
+            `${URL_BASE}:${PORT}/users`,
+            requestOptions
+        );
         const result = await response.json();
         console.log("resultado", result);
         return result;
