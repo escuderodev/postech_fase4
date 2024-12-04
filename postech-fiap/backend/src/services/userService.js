@@ -116,6 +116,9 @@ export class UserService {
     static async login(req, res) {
         const { email, password } = req.body;
 
+        console.log("email", email);
+        console.log("password", password);
+
         // check if users not exists
         const userExists = await user.findOne({ email }).select("+password");
 

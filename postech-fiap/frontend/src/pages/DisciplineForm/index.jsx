@@ -1,10 +1,13 @@
-import React from 'react';
-import { View, Text, TextInput, TouchableOpacity } from 'react-native';
-import { useNavigation } from '@react-navigation/native';
-import { styles } from './styles';
+import React from "react";
+import { View, Text, TextInput, TouchableOpacity } from "react-native";
+import { useNavigation } from "@react-navigation/native";
+import { styles } from "./styles";
+import { createDiscipline } from "../../services/disciplineService";
+import { useState } from "react";
 
 export function DisciplineForm() {
     const navigation = useNavigation();
+    const [disciplineTitle, setDisciplineTitle] = useState("");
 
     return (
         <View style={styles.container}>
@@ -12,12 +15,14 @@ export function DisciplineForm() {
                 <Text style={styles.title}>Cadastro de Disciplina</Text>
                 <TextInput
                     style={styles.input}
-                    placeholder='Digite o Título da Disciplina'
+                    placeholder="Digite o Título da Disciplina"
+                    onChangeText={setDisciplineTitle}
                 />
                 <TouchableOpacity
                     style={styles.button}
                     onPress={() => {
-                        navigation.navigate('DiscipliniesList')
+                        createDiscipline(disciplineTitle);
+                        navigation.navigate("DiscipliniesList");
                     }}
                 >
                     <Text style={styles.buttonText}>Salvar</Text>

@@ -2,6 +2,7 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 import { URL_BASE, PORT } from "./fetchConfig";
 
 export const login = async (usuario, senha) => {
+    console.log(usuario);
     try {
         const response = await fetch(`${URL_BASE}:${PORT}/login`, {
             method: "POST",
@@ -17,12 +18,13 @@ export const login = async (usuario, senha) => {
         if (!response.ok) {
             const errorData = await response.json();
             throw new Error("Erro ao fazer login: " + errorData.message);
+            console.log("Erro ao fazer login: " + errorData.message);
         }
-
         const data = await response.json();
+        console.log("data", data);
         console.log(data.result.token);
         const token = data.result.token;
-        await AsyncStorage.setItem("token", token);
+        await setToken(token);
 
         return data;
     } catch (error) {
