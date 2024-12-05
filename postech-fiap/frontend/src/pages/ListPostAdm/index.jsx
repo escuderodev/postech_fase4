@@ -6,11 +6,23 @@ import {
     TouchableOpacity,
     FlatList,
 } from "react-native";
-import { PostList } from "../../data/post.js";
+//import { PostList } from "../../data/post.js";
 import { PostItem } from "../../components/PostItem/PostItem.jsx";
 import { styles } from "./styles.js";
+import { useState, useEffect } from "react";
+import { listPosts } from "../../services/postService.js";
 
 export function ListPostAdm({ navigation }) {
+    const [postList, setPostList] = useState([]);
+
+    useEffect(() => {
+        const fetchPosts = async () => {
+            const data = await listPosts();
+            setPostList(data);
+        };
+        fetchPosts();
+    }, []);
+
     return (
         <>
             <View style={styles.container}>
@@ -54,7 +66,7 @@ export function ListPostAdm({ navigation }) {
 
             <View style={styles.scrollViewContainer}>
                 <FlatList
-                    data={PostList}
+                    data={postList}
                     renderItem={({ item }) => (
                         <PostItem
                             post={item}
