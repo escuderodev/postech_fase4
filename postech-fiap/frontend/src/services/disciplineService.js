@@ -22,7 +22,7 @@ export const listDisciplines = async () => {
 
 export const getDisciplineById = async (id) => {
     try {
-        const response = await fetch(`/disciplinies/${id}`, {
+        const response = await fetch(`${URL_BASE}:${PORT}/disciplinies/${id}`, {
             method: "GET",
             redirect: "follow",
         });

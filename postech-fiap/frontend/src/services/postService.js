@@ -9,7 +9,7 @@ export const listPosts = async () => {
 
     try {
         const response = await fetch(
-            "http://192.168.15.21:3000/posts",
+            `${URL_BASE}:${PORT}/posts`,
             requestOptions
         );
         const result = await response.json();
